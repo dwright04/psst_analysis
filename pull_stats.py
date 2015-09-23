@@ -258,45 +258,6 @@ def main():
         threshold,ghosts_total,ghost_movers,total_movers,promoted,possible_attic,\
         recovered_movers,seeing))
     output.close()
-    """
-    output = open("psst_machine_learning_stats.csv","w")
-    output.write("#date,total,ml_rejected,threshold,ghost_total,ghost_movers,total_movers,promoted,atticpossible,recoveredmovers,seeing\n")
-    for key in ml_stats.keys():
-        print key
-        total = ml_stats[key]["total"]
-        ml_rejected = ml_stats[key]["rejected"]
-        threshold = ml_stats[key]["threshold"]
-        try:
-            ghosts_total = ghost_stats[key]["total"]
-        except KeyError:
-            ghosts_total = 0
-        try:
-            ghost_movers = ghost_stats[key]["movers"]
-        except KeyError:
-            ghost_movers = 0
-        try:
-            total_movers = movers_stats[key]["total"]
-        except KeyError:
-            total_movers = 0
-        try:
-            promoted = eyeballing_stats[key]["promoted"]
-        except KeyError:
-            promoted = 0
-        try:
-            possible_attic = eyeballing_stats[key]["atticpossible"]
-        except KeyError:
-            possible_attic = 0
-        try:
-             recovered_movers = eyeballing_stats[key]["movers"]
-        except KeyError:
-             possible_movers = 0
-        try:
-            seeing = seeing_stats[key]["seeing"]
-        except KeyError:
-            seeing = 0
 
-        output.write("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n"%(key,total,ml_rejected,threshold,ghosts_total,ghost_movers,total_movers,promoted,possible_attic,recovered_movers,seeing))
-    output.close()
-    """
 if __name__ == "__main__":
     main()
